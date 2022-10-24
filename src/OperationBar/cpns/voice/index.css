@@ -1,0 +1,48 @@
+.voice {
+    position: relative;
+}
+
+.voice .volume-bar {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 130%;
+    left: 50%;
+    width: 30px;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.voice .volume-bar .volume {
+    background-color: rgb(230, 230, 230);
+    width: 8px;
+    border-radius: 5px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.voice .volume-bar .volume .real-volume {
+    background-color:#55b59a;
+    width: 8px;
+    transition: height .1s linear;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.voice:hover > .volume-bar {
+    height: 50px;
+    animation: showVolume .1s linear;
+}
+@keyframes showVolume {
+    from {
+        height: 0px;
+    }
+
+    to {
+        height: 50px;
+    }
+}
