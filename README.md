@@ -16,7 +16,6 @@ $ npm i boniii-player
 
 ```jsx
 import React from 'react';
-import {getSongList} from './request'
 
 function Test() {
 //You can also obtain the play and pause functions of the player through ref
