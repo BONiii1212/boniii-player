@@ -16,6 +16,7 @@ $ npm i boniii-player
 
 ```jsx
 import React from 'react';
+import BONiiiPlayer from 'boniii-player'
 
 function Test() {
 //You can also obtain the play and pause functions of the player through ref
@@ -36,8 +37,22 @@ For example, the songList format must be
 
 ```js
 const SongList = [
-    { id: 0, songName: 'sunflower', singer: 'Post Malone / Swae Lee', lyrics: '', songCover: 'https://music-1305899292.cos.ap-shanghai.myqcloud.com/0.jpg', resource: 'https://music-1305899292.cos.ap-shanghai.myqcloud.com/0.mp3'},
-    { id: 1, songName: 'goodbye', singer: 'Post Malone / Young Thug', lyrics: '', songCover: 'https://music-1305899292.cos.ap-shanghai.myqcloud.com/1.jpg', resource: 'https://music-1305899292.cos.ap-shanghai.myqcloud.com/1.mp3'}
+    {
+        id: 0, 
+        songName: 'sunflower', 
+        singer: 'Post Malone / Swae Lee', 
+        lyrics: '', 
+        songCover: 'https://music-1305899292.cos.ap-shanghai.myqcloud.com/0.jpg', 
+        resource: 'https://music-1305899292.cos.ap-shanghai.myqcloud.com/0.mp3'
+    },
+    {
+       id: 1, 
+       songName: 'goodbye', 
+       singer: 'Post Malone / Young Thug', 
+       lyrics: '', 
+       songCover: 'https://music-1305899292.cos.ap-shanghai.myqcloud.com/1.jpg', 
+       resource: 'https://music-1305899292.cos.ap-shanghai.myqcloud.com/1.mp3'
+    }
 ]
 ```
 

@@ -1,6 +1,6 @@
 {
   "name": "boniii-player",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "Compact music player",
   "main": "./dist/index.js",
   "scripts": {
