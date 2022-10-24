@@ -4,6 +4,8 @@
 
 A fast access compact music player for React projects
 
+![](https://music-1305899292.cos.ap-shanghai.myqcloud.com/example.png)
+
 ### Install
 
 ```

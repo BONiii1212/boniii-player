@@ -26,9 +26,8 @@ const BONiiiPlayer = forwardRef(({songList}, ref) => {
     
     useImperativeHandle(ref, ()=>{
         return {
-            pause: pause(),
-            play: play(),
-
+            pause: pause,
+            play: play,
         }
     })
 

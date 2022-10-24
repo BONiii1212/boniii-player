@@ -33,8 +33,8 @@ const BONiiiPlayer = /*#__PURE__*/(0, _react.forwardRef)(({
   const [songSrc, setSongSrc] = (0, _react.useState)('');
   (0, _react.useImperativeHandle)(ref, () => {
     return {
-      pause: pause(),
-      play: play()
+      pause: pause,
+      play: play
     };
   });
 
