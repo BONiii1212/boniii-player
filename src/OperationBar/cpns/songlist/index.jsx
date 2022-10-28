@@ -1,10 +1,10 @@
 import React from "react"
 import './index.css'
 
-const SongList = ({handleHiddenSongList}) => {
+const SongList = ({size, handleHiddenSongList}) => {
     return (
         <div className="song-list" onClick={handleHiddenSongList}>
-            <span className='icon-font'>&#xeb7c;</span>
+            <span style={{fontSize: `${0.16 * size}px`}} className='icon-font'>&#xeb7c;</span>
         </div>
     )
 }

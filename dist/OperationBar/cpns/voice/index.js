@@ -9,12 +9,19 @@ require("./index.css");
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 const Voice = ({
+  size,
+  isMute,
   handleChangeVolume
 }) => {
-  const preVolumeSize = (0, _react.useRef)(0);
+  const preVolumeSize = (0, _react.useRef)(isMute ? 100 : 0);
   const volumeBar = (0, _react.useRef)();
-  const [silent, setSilent] = (0, _react.useState)(false);
-  const [volumeSize, setVolumeSize] = (0, _react.useState)(100);
+  const [silent, setSilent] = (0, _react.useState)(isMute);
+  const [volumeSize, setVolumeSize] = (0, _react.useState)(isMute ? 0 : 100);
+  (0, _react.useEffect)(() => {
+    if (isMute) {
+      handleChangeVolume(0);
+    }
+  }, []);
 
   // 修改静音和从静音中恢复
   const changeSilent = () => {
@@ -46,7 +53,10 @@ const Voice = ({
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "voice"
   }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "voice-bar"
+    className: "voice-bar",
+    style: {
+      fontSize: `${0.16 * size}px`
+    }
   }, silent ? /*#__PURE__*/_react.default.createElement("span", {
     className: "icon-font",
     onClick: changeSilent
@@ -54,15 +64,24 @@ const Voice = ({
     className: "icon-font",
     onClick: changeSilent
   }, "\uECA5")), /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      width: `${0.3 * size}px`
+    },
     className: "volume-bar",
     ref: volumeBar,
     onClick: handleVolumeBarClick
   }, /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      width: `${0.08 * size}px`,
+      borderRadius: `${0.05 * size}px`
+    },
     className: "volume"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "real-volume",
     style: {
-      height: volumeSize + '%'
+      height: volumeSize + '%',
+      width: `${0.08 * size}px`,
+      borderRadius: `${0.05 * size}px`
     }
   }))));
 };

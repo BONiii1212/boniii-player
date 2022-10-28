@@ -1,13 +1,10 @@
 .lyrics-display {
     overflow: hidden;
-    height: 55px;
 }
 
 .lyrics-display .lyrics-display-item {
     text-align: center;
-    height: 17px;
     color: #817c7c68;
-    font-size: 12px
 }
 
 .lyrics-display .lyric-active{

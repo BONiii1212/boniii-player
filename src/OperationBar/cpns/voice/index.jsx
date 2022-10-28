@@ -1,12 +1,18 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import './index.css'
 
-const Voice = ({handleChangeVolume}) => {
-    const preVolumeSize = useRef(0)
+const Voice = ({size, isMute, handleChangeVolume}) => {
+    const preVolumeSize = useRef(isMute?100 :0)
     const volumeBar = useRef()
-    const [silent, setSilent] = useState(false)
-    const [volumeSize, setVolumeSize] = useState(100)
+    const [silent, setSilent] = useState(isMute)
+    const [volumeSize, setVolumeSize] = useState(isMute?0 :100)
 
+    useEffect(()=>{
+        if(isMute){
+            handleChangeVolume(0)
+        }
+    }, [])
+    
     // 修改静音和从静音中恢复
     const changeSilent = () => {
         if(silent){
@@ -37,12 +43,12 @@ const Voice = ({handleChangeVolume}) => {
 
     return (
         <div className='voice'>
-            <div className='voice-bar'>
+            <div className='voice-bar' style={{fontSize: `${0.16 * size}px`}}>
                 {silent? <span className='icon-font' onClick={changeSilent}>&#xe650;</span>:<span className='icon-font' onClick={changeSilent}>&#xeca5;</span>}
             </div>
-            <div className='volume-bar' ref={volumeBar} onClick={handleVolumeBarClick}>
-                <div className='volume'>
-                    <div className='real-volume' style={{height: volumeSize + '%'}}></div>
+            <div style={{width: `${0.3 * size}px`}} className='volume-bar' ref={volumeBar} onClick={handleVolumeBarClick}>
+                <div style={{width: `${0.08 * size}px`, borderRadius: `${0.05 * size}px`}} className='volume'>
+                    <div className='real-volume' style={{height: volumeSize + '%', width: `${0.08 * size}px`, borderRadius: `${0.05 * size}px`}}></div>
                 </div>
             </div>
         </div>

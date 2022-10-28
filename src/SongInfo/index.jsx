@@ -1,11 +1,11 @@
 import React from "react"
 import "./index.css"
 
-const SongInfo = ({songName, singer}) => {
+const SongInfo = ({size, songName, singer}) => {
     return (
         <div className="song-info">
-            <span>{songName}</span>
-            <span> - {singer}</span>
+            <span style={{fontSize: `${0.16 * size}px`}}>{songName}</span>
+            <span style={{fontSize: `${0.12 * size}px`}}> - {singer}</span>
         </div>
     )
 }

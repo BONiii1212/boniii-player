@@ -1,7 +1,7 @@
 import "./index.css"
 import React, {useEffect, useRef, useState} from 'react'
 
-const ProgressBar = ({currentTime, totalTime, handleChangeCurrentTime}) => {
+const ProgressBar = ({size, currentTime, totalTime, handleChangeCurrentTime}) => {
     const progressRef = useRef()
     const isClick = useRef(false)
     const isDraping = useRef(false)
@@ -57,8 +57,8 @@ const ProgressBar = ({currentTime, totalTime, handleChangeCurrentTime}) => {
         }
     },[currentTime, totalTime])
     return (
-        <div ref={progressRef} className="progress-bar-wrap" onMouseDown={handleProgressBarMouseDown}>
-            <div className="progress-bar">
+        <div ref={progressRef} style={{height: `${0.1 * size}px`}} className="progress-bar-wrap" onMouseDown={handleProgressBarMouseDown}>
+            <div style={{height: `${0.02 * size}px`}} className="progress-bar">
                 {/* 已播放部分进度条 */}
                 <div style={{ width: `${playedWidth}%` }} className="progress-played"></div>
                 {/* 已下载部分进度条 */}

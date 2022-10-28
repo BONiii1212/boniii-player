@@ -8,7 +8,6 @@
     bottom: 0;
     margin-bottom: 130%;
     left: 50%;
-    width: 30px;
     transform: translate(-50%);
     display: flex;
     justify-content: center;
@@ -16,8 +15,6 @@
 }
 .voice .volume-bar .volume {
     background-color: rgb(230, 230, 230);
-    width: 8px;
-    border-radius: 5px;
     height: 100%;
     position: relative;
     display: flex;
@@ -27,9 +24,7 @@
 
 .voice .volume-bar .volume .real-volume {
     background-color:#55b59a;
-    width: 8px;
     transition: height .1s linear;
-    border-radius: 5px;
     position: absolute;
 }
 

@@ -1,6 +1,5 @@
 .progress-bar-wrap {
     width: 100%;
-    height: 10px;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -20,7 +19,6 @@
 
 .progress-bar {
     width: 100%;
-    height: 2px;
     background-color: rgba(189, 189, 189, 0.714);
     position: relative;
 }

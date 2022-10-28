@@ -1,16 +1,17 @@
 import React from "react"
+import { LOOP, ORDER } from "../../../constant"
 import './index.css'
 
-const Pattern = ({mode, setMode}) => {
+const Pattern = ({size, mode, setMode}) => {
 
     const handleLoopClick = () => {
-        setMode(mode==='loop'?'in_order':'loop')
+        setMode(mode === LOOP? ORDER: LOOP)
     }
 
     return (
-        <div onClick={handleLoopClick}>
-            {mode === 'loop' && <span className="icon-font">&#xea76;</span>}
-            {mode === 'in_order' && <span className="icon-font">&#xea75;</span>}
+        <div className="play-patten" onClick={handleLoopClick}>
+            {mode === LOOP && <span style={{fontSize: `${0.16 * size}px`}} className="icon-font">&#xea76;</span>}
+            {mode === ORDER && <span style={{fontSize: `${0.16 * size}px`}} className="icon-font">&#xea75;</span>}
         </div>
     )
 }

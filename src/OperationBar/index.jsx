@@ -4,13 +4,13 @@ import Voice from './cpns/voice'
 import Pattern from './cpns/pattern'
 import './index.css'
 
-const OperationBar = ({handleChangeVolume, mode, setMode, handleHiddenSongList}) => {
+const OperationBar = ({size, isMute, handleChangeVolume, mode, setMode, handleHiddenSongList}) => {
 
     return (
-        <div className="operation-bar">
-            <Voice handleChangeVolume={handleChangeVolume}/>
-            <Pattern mode={mode} setMode={setMode}/>
-            <SongList handleHiddenSongList={handleHiddenSongList}/>
+        <div style={{minWidth: `${0.7 * size}px`, padding: `0px ${0.05 * size}px`}} className="operation-bar">
+            <Voice size={size} isMute={isMute} handleChangeVolume={handleChangeVolume}/>
+            <Pattern size={size} mode={mode} setMode={setMode}/>
+            <SongList size={size} handleHiddenSongList={handleHiddenSongList}/>
         </div>
     )
 }
