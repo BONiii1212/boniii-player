@@ -36,10 +36,6 @@ const BONiiiPlayer = forwardRef(({songList, pattern = LOOP, isMute = false, size
     useEffect(() => {
         setSongInfo(songList[currentSong])
         setSongSrc(songList[currentSong]?.resource)
-        if(automaticCutting.current){
-            play()
-            automaticCutting.current = false
-        }
     },[currentSong, songList])
 
     // 播放
@@ -86,6 +82,10 @@ const BONiiiPlayer = forwardRef(({songList, pattern = LOOP, isMute = false, size
 
     const handleAudioOnCanplay = () => {
         setTotalTime(audioRef.current.duration * 1000)
+        if(automaticCutting.current){
+            play()
+            automaticCutting.current = false
+        }
     }
 
     const handleTimeUpdate = () => {
