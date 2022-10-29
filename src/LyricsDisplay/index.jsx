@@ -26,7 +26,7 @@ const LyricsDisplay = ({size, lyrics, currentTime}) => {
     },[currentTime, lyrics, currentLyric, currentPosition])
 
     return (
-        <div className='lyrics-display' style={{height: `${0.55 * size}px`}}>
+        <div className='lyrics-display' style={{height: `${0.5 * size}px`}}>
             <div style={{ transform: `translateY(${-currentPosition}px)`, transition: "all .3s linear" }}>
                 {
                     lyrics.length > 0? (lyrics.map((item, index) => {
