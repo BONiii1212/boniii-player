@@ -16,7 +16,7 @@ $ npm i boniii-player
 
 | Property | Description                                                  | Type              | Default |
 | -------- | ------------------------------------------------------------ | ----------------- | ------- |
-| songList | Song list (including song name, singer, lyrics, cover and music) | object            | null    |
+| songList | Song list (including song name, singer, lyrics, cover and music) | string            | null    |
 | pattern  | Playback mode                                                | 'loop' \| 'order' | 'loop'  |
 | isMute   | Mute or not                                                  | boolean           | False   |
 | size     | Set the size of player                                       | number            | 100     |
