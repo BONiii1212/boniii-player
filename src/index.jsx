@@ -13,7 +13,7 @@ import SongList from './SongList'
 import './index.css'
 import './iconFont/index.css'
 
-const BONiiiPlayer = forwardRef(({songList, pattern = LOOP, isMute = false, size = 100}, ref) => {
+const BONiiiPlayer = forwardRef(({songList=[], pattern = LOOP, isMute = false, size = 100}, ref) => {
     const audioRef = useRef()
     const automaticCutting = useRef(false) //自动切歌，用于自动切歌的时候自动播放
     const [currentTime, setCurrentTime] = useState(0)

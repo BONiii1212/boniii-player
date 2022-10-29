@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-      <BONiiiPlayer ref={ref} songList={songList} pattern={'order'} size={200} />
+      <BONiiiPlayer ref={ref} songList={songList} pattern={'order'} size={100} />
   );
 }
 

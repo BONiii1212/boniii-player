@@ -24,7 +24,7 @@ $ npm i boniii-player
 ### Usage
 
 ```jsx
-import React from 'react';
+import React, { useRef } from 'react';
 import BONiiiPlayer from 'boniii-player'
 
 function Test() {
